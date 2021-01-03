@@ -92,6 +92,8 @@ router.post("/login", (req, res) => {
       return;
     }
 
+    // ensuring session is created before sending response by weapping the variable in a callback
+    // after the creation of the session is completed (.save)
     req.session.save(() => {
       // declare session's variables
       req.session.user_id = dbUserData.id;
@@ -120,6 +122,8 @@ router.post("/logout", (req, res) => {
 router.put("/:id", (req, res) => {
   // only update what was entered by passing req.body
   User.update(req.body, {
+    // required syntax to enable the password hooks from User model
+    individualHooks: true,
     where: {
       id: req.params.id,
     },

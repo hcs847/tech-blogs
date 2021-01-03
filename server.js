@@ -10,11 +10,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const session = require("express-session");
-
+// store the sessions created by express-session into database
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sess = {
   secret: "super secret secret",
+  // setup session to use cookies
   cookie: {},
   resave: false,
   saveUninitialized: true,
