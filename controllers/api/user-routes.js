@@ -85,9 +85,9 @@ router.post("/login", (req, res) => {
     }
 
     // calling checkPassword method from User model and passing user's password
-    const validpassword = dbUserData.checkPassword(req.body.password);
+    const validPassword = dbUserData.checkPassword(req.body.password);
 
-    if (!validpassword) {
+    if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
@@ -100,6 +100,7 @@ router.post("/login", (req, res) => {
       req.session.username = dbUserData.username;
       // setting the loggedIn variable to true when user is successfully loggedIn
       req.session.loggedIn = true;
+
       // sending back response
       res.json({ user: dbUserData, message: "You are now logged in!" });
     });

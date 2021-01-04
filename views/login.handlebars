@@ -1,0 +1,56 @@
+<div class='row'>
+    <div class='col s5 m5 l5'>
+
+
+        <div class='card'>
+            <div class="card-title brown darken-4">
+                <span>Login</span>
+            </div>
+            <div class='card-content'>
+
+
+                <form class='login-form'>
+                    <div>
+                        <label for='username-login'>Username:</label>
+                        <input type='text' id='username-login' />
+                    </div>
+                    <div>
+                        <label for='password-login'>Password:</label>
+                        <input type='password' id='password-login' />
+
+                    </div>
+                    <div>
+                        <button class="btn grey darken-3" type="submit" name="action">login
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class='card'>
+            <div class="card-title brown darken-4">
+                <span>Signup</span>
+            </div>
+            <div class='card-content'>
+                <form class='signup-form'>
+                    <div>
+                        <label for='username-signup'>username:</label>
+                        <input type='text' id='username-signup' />
+                    </div>
+                    <div>
+                        <label for='password-signup'>password:</label>
+                        <input type='password' id='password-signup' />
+                    </div>
+                    <div>
+                        <button class="btn grey darken-3" type="submit" name="action">signup
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- apply js logic to trigger login page routing --}}
+<script src='/javascript/login.js'></script>

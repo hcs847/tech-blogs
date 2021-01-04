@@ -86,19 +86,29 @@ form label {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
-header {
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+/* header {
   border-bottom: 1px solid rgb(155, 154, 154);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1%;
-}
+  padding: 2% 1%;
+} */
 
 header h1 {
   font-size: 1em;
 }
+/* nav {
+  display: flex;
+  justify-content: space-around;
+  height: fit-content;
+} */
 
 main {
   flex: 1;
@@ -108,14 +118,13 @@ main {
 .btn-no-style {
   background: none;
   border: none;
-  padding: 0;
+  /* padding: 0; */
   cursor: pointer;
   text-decoration: none;
-  color: #3367a7;
   font-size: 100%;
   font-weight: bold;
   transition: color 0.1s;
-  margin-left: 16px;
+  /* margin: 0.5rem; */
 }
 
 .btn-no-style:hover {
@@ -135,11 +144,28 @@ main {
   margin-bottom: 2%;
   line-height: 150%;
 }
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 650;
+  background-color: var(--primary);
+  color: var(--dark);
+  padding: 0 10px;
+  display: inline-block;
+  border-radius: var(--border-radius);
+  box-shadow: 6px 5px var(--light-dark);
+  margin: 0.5rem;
+}
 
 .post .title span {
   font-style: italic;
   font-size: 90%;
-  color: #7d7d7d;
+  color: var(--dark);
+}
+
+.card span {
+  color: var(--primary);
+  font-weight: 500;
+  padding-left: 1rem;
 }
 
 .edit-link {

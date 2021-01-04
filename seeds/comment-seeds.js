@@ -2,23 +2,22 @@ const { Comment } = require("../models");
 
 const commentdata = [
   {
-    comment_text: "Nunc rhoncus dui vel sem.",
+    comment_text: "Love this content!",
     user_id: 3,
     post_id: 1,
   },
   {
-    comment_text:
-      "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    comment_text: "Exactly what I was looking for.",
     user_id: 1,
     post_id: 2,
   },
   {
-    comment_text: "Aliquam erat volutpat. In congue.",
+    comment_text: "Very inspiring.",
     user_id: 3,
     post_id: 2,
   },
   {
-    comment_text: "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    comment_text: "Can't wait for the next blog.",
     user_id: 1,
     post_id: 3,
   },

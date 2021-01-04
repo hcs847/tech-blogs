@@ -13,6 +13,7 @@ const session = require("express-session");
 // store the sessions created by express-session into database
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
+// setting up an express.js session and connecting it to db
 const sess = {
   secret: "super secret secret",
   // setup session to use cookies
