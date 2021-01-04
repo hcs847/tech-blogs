@@ -6,7 +6,7 @@ const { Post, User, Comment } = require("../../models");
 router.get("/", (req, res) => {
   Post.findAll({
     attributes: ["id", "title", "content", "created_at"],
-    order: [["create_at Desc"]],
+    order: [["created_at", "Desc"]],
     include: [
       {
         model: Comment,
@@ -21,12 +21,12 @@ router.get("/", (req, res) => {
         attributes: ["username"],
       },
     ],
-  }).then((dbPostData) =>
-    res.json(dbPostData).catch((err) => {
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
-    })
-  );
+    });
 });
 
 // get a single post
