@@ -1,0 +1,12 @@
+<div class='card'>
+    <div class="card-title blue-grey darken-4">
+        <span>{{title}}</span>
+    </div>
+    <div class='card-content'>
+        <p>{{content}}</p>
+    </div>
+    <div class='card-action blue-grey-text text-darken-4'>
+        {{!-- comments made - routing to the related single post --}}
+        <a href='/post/{{id}}'>{{comments.length}} comment(s)</a>
+    </div>
+</div>

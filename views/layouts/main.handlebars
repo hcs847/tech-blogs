@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel='stylesheet' href='/stylesheets/style.css'>
@@ -13,8 +14,9 @@
 <body>
 
     <nav class='blue-grey darken-4'>
-        <div class=' nav-wrapper'>
-            <ul>
+        <div class=' nav-wrapper blue-grey darken-4'>
+            <a id='nav-mobile' class='brand-logo blue-grey-text text-darken-4' href='/'>The Tech Blogs</a>
+            <ul class='right'>
                 {{!-- loggedIn variable is passed up to main from the single-post template --}}
                 {{#if loggedIn}}
                 <li><button id='logout' class='btn-no-style'>Logout</button></li>
@@ -22,11 +24,7 @@
                 <li><a href='/login'>Login</a></li>
                 {{/if}}
             </ul>
-            <header>
-                <h1>
-                    <a class='blue-grey-text text-darken-4' href='/'>The Tech Blogs</a>
-                </h1>
-            </header>
+
         </div>
     </nav>
     <main class='container'>

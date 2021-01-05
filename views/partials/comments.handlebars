@@ -1,0 +1,10 @@
+<div class='card-panel z-depth-3'>
+    <div class='collection'>
+        {{#each this}}
+        <div class='collection-item'>
+            <p> {{comment_text}}</p>
+            <p> --{{user.username}}, {{created_at}}</p>
+        </div>
+
+        {{/each}}
+    </div>

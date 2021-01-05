@@ -79,7 +79,8 @@ router.get("/post/:id", (req, res) => {
 
       // serialize the data
       const post = dbPostData.get({ plain: true });
-      console.log(post, "The first comment: ", post.comments[0].comment_text);
+      // console.log(post, "These are the comments: ", post.comments);
+
       // passing data as object to single-post handlebars template
       // and the loggedIn variable to enable conditional rendering accordingly
       res.render("single-post", {

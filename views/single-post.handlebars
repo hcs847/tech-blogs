@@ -1,17 +1,7 @@
 <div class='container'>
-    <div class='card'>
-        <div class="card-title blue-grey darken-4">
-            <span>{{post.title}}</span>
-        </div>
-        <div class='card-content'>
+    {{!-- passing the post-info partial template --}}
+    {{> post-info post}}
 
-            <p>{{post.content}}</p>
-        </div>
-        <div class='card-action blue-grey-text text-darken-4'>
-            {{!-- comments made - routing to the related single post --}}
-            <a href='/post/{{id}}'>{{post.comments.length}} comment(s)</a>
-        </div>
-    </div>
     <div class='card'>
         {{!-- loggedIn variable was passed to the post route in home-routes --}}
         {{#if loggedIn}}
@@ -26,20 +16,14 @@
             </div>
         </form>
         {{/if}}
+
+
+        {{!-- rendering the comments partial --}}
+        {{> comments post.comments}}
+
+
+        {{#if loggedIn}}
+        <script src='/javascript/comment.js'></script>
+        {{/if}}
+
     </div>
-    {{!-- rendering the comments --}}
-    <div class='card-panel'>
-        {{#each post.comments as |comment|}}
-        <div class='card-content'>
-            <p> {{comment_text}}</p>
-            <p>--{{user.username}}, {{created_at}}</p>
-        </div>
-        {{/each}}
-
-
-    </div>
-    {{#if loggedIn}}
-    <script src='/javascript/comment.js'></script>
-    {{/if}}
-
-</div>
