@@ -3,7 +3,7 @@ const { Post, User, Comment } = require("../models");
 
 // rendering all blog posts on homepage
 router.get("/", (req, res) => {
-  console.log(req.session);
+  // console.log(req.session);
   Post.findAll({
     attributes: ["id", "title", "content", "created_at"],
     include: [
@@ -26,7 +26,10 @@ router.get("/", (req, res) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       // rendering the homepage.handlebars template
       // data to pass into handlebars template has to be in an object format
-      res.render("homepage", { posts });
+      res.render("homepage", {
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -46,6 +49,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// rendering a single post
 router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {
@@ -76,8 +80,12 @@ router.get("/post/:id", (req, res) => {
       // serialize the data
       const post = dbPostData.get({ plain: true });
       console.log(post, "The first comment: ", post.comments[0].comment_text);
-      // pass data as object to single-post handlebars template
-      res.render("single-post", { post });
+      // passing data as object to single-post handlebars template
+      // and the loggedIn variable to enable conditional rendering accordingly
+      res.render("single-post", {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       console.log(err);

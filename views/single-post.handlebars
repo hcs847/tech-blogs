@@ -1,22 +1,22 @@
 <div class='container'>
     <div class='card'>
-        <div class="card-title brown darken-4">
+        <div class="card-title blue-grey darken-4">
             <span>{{post.title}}</span>
         </div>
         <div class='card-content'>
 
             <p>{{post.content}}</p>
         </div>
-        <div class='card-action brown-text text-darken-4'>
+        <div class='card-action blue-grey-text text-darken-4'>
             {{!-- comments made - routing to the related single post --}}
             <a href='/post/{{id}}'>{{post.comments.length}} comment(s)</a>
         </div>
     </div>
     <div class='card'>
-
-
-        <form class='card-content comment-form'>
-            <span class='brown-text text-darken-4'>Add your comments</span>
+        {{!-- loggedIn variable was passed to the post route in home-routes --}}
+        {{#if loggedIn}}
+        <form class='comment-form card-content'>
+            <span class='blue-grey-text text-darken-4'>Add your comments</span>
             <div>
                 <textarea name='comment-body' class='materialize-textarea white'></textarea>
             </div>
@@ -25,20 +25,21 @@
                 <button type='submit' class='btn grey darken-3'>Submit</button>
             </div>
         </form>
+        {{/if}}
     </div>
     {{!-- rendering the comments --}}
     <div class='card-panel'>
         {{#each post.comments as |comment|}}
         <div class='card-content'>
-
             <p> {{comment_text}}</p>
-            <br />
             <p>--{{user.username}}, {{created_at}}</p>
         </div>
         {{/each}}
 
 
     </div>
-
+    {{#if loggedIn}}
+    <script src='/javascript/comment.js'></script>
+    {{/if}}
 
 </div>

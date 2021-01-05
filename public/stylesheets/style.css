@@ -3,7 +3,7 @@
   --secondary: #9caea9;
   --tertiary: #788585;
   --light-dark: #6f6866;
-  --dark: #38302e;
+  --dark: rgb(38, 50, 56);
   --border-radius: 0.3rem;
 }
 
@@ -24,13 +24,13 @@ html {
 
 a {
   text-decoration: none;
-  color: #1b4579;
+  color: var(--dark);
   font-weight: bold;
   transition: color 0.1s;
 }
 
 a:hover {
-  color: #4b7db9;
+  color: green;
 }
 
 button {
@@ -45,7 +45,7 @@ button {
 }
 
 button:hover {
-  background-color: #5196e9;
+  background-color: green;
 }
 
 .post-list {

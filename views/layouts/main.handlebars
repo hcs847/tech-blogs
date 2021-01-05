@@ -12,19 +12,21 @@
 
 <body>
 
-    <nav class='brown darken-4'>
+    <nav class='blue-grey darken-4'>
         <div class=' nav-wrapper'>
             <ul>
+                {{!-- loggedIn variable is passed up to main from the single-post template --}}
+                {{#if loggedIn}}
                 <li><button id='logout' class='btn-no-style'>Logout</button></li>
+                {{else}}
                 <li><a href='/login'>Login</a></li>
+                {{/if}}
             </ul>
             <header>
                 <h1>
-                    <a class='brown-text text-darken-4' href='/'>The Tech Blogs</a>
+                    <a class='blue-grey-text text-darken-4' href='/'>The Tech Blogs</a>
                 </h1>
             </header>
-
-
         </div>
     </nav>
     <main class='container'>
@@ -33,7 +35,9 @@
 
 
     {{!-- trigger js logout logic --}}
+    {{#if loggedIn}}
     <script src='/javascript/logout.js'></script>
+    {{/if}}
 </body>
 
 </html>
