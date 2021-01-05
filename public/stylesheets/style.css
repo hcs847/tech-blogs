@@ -1,9 +1,9 @@
 :root {
-  --primary: #ccdad1;
-  --secondary: #9caea9;
-  --tertiary: #788585;
-  --light-dark: #6f6866;
-  --dark: rgb(38, 50, 56);
+  --primary: #e8e9ee;
+  --secondary: #d1d1d1;
+  --tertiary: #587d71;
+  --med-green: #587d71;
+  --dark: #0f0606;
   --border-radius: 0.5rem;
 }
 
@@ -21,15 +21,24 @@ html {
   line-height: 1.5;
   font-size: 16px;
 }
-
+.btn {
+  border-radius: var(--border-radius);
+}
+.card {
+  border-radius: var(--border-radius);
+}
 .card-action a {
   color: var(--dark) !important;
 }
 
 .card-panel {
-  background-color: rgb(204 218 209 / 0.5);
+  background-color: rgb(253 255 254 / 90%);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
 }
-
+.card .card-title {
+  border-bottom: var(--med-green) 5px solid;
+}
 a {
   text-decoration: none;
   color: var(--tertiary);
@@ -38,7 +47,7 @@ a {
 }
 
 a:hover {
-  color: rgb(102, 72, 114) !important;
+  color: var(--med-green) !important;
 }
 
 button {
@@ -52,8 +61,16 @@ button {
   border-radius: 5px;
 }
 
+.user {
+  font-weight: 800;
+}
+
+.med-green {
+  background-color: var(--med-green) !important;
+}
+
 button:hover {
-  background-color: green;
+  background-color: var(--med-green);
 }
 
 .post-list {
@@ -71,7 +88,7 @@ input {
 textarea:focus,
 input:focus {
   outline: none;
-  border: 1px solid #4e8dda;
+  border: 1px solid var(--med-green);
 }
 
 textarea {
@@ -124,7 +141,7 @@ main {
 .btn-no-style {
   background: none;
   border: none;
-  /* padding: 0; */
+  padding: 0.5rem;
   cursor: pointer;
   text-decoration: none;
   font-size: 100%;
@@ -133,10 +150,10 @@ main {
   /* margin: 0.5rem; */
 }
 
-.btn-no-style:hover {
+/* .btn-no-style:hover {
   background: none;
-  color: #448be0;
-}
+  color: ;
+} */
 
 .delete-post-btn {
   background-color: #c01515;
@@ -154,11 +171,11 @@ main {
   font-size: 2rem;
   font-weight: 700;
   background-color: var(--primary);
-  color: var(--dark);
+  color: #01579b;
   padding: 0 10px;
   /* display: inline-block; */
   border-radius: var(--border-radius);
-  box-shadow: 6px 5px var(--light-dark);
+  box-shadow: 6px 5px var(--med-green);
   margin: 0.5rem;
 }
 

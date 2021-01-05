@@ -2,9 +2,10 @@
     {{!-- passing the post-info partial template --}}
     {{> post-info post}}
 
+    {{#if loggedIn}}
     <div class='card'>
         {{!-- loggedIn variable was passed to the post route in home-routes --}}
-        {{#if loggedIn}}
+
         <form class='comment-form card-content'>
             <span class='blue-grey-text text-darken-4'>Add your comments</span>
             <div>
@@ -12,18 +13,17 @@
             </div>
 
             <div class='center'>
-                <button type='submit' class='btn grey darken-3'>Submit</button>
+                <button type='submit' class='btn med-green'>Submit<i class="material-icons right">send</i></button>
             </div>
         </form>
-        {{/if}}
-
-
-        {{!-- rendering the comments partial --}}
-        {{> comments post.comments}}
-
-
-        {{#if loggedIn}}
-        <script src='/javascript/comment.js'></script>
-        {{/if}}
-
     </div>
+    {{/if}}
+
+
+    {{!-- rendering the comments partial --}}
+    {{> comments post.comments}}
+
+</div>
+{{#if loggedIn}}
+<script src='/javascript/comment.js'></script>
+{{/if}}
