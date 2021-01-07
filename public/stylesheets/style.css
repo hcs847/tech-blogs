@@ -1,12 +1,13 @@
 :root {
-  --primary: #e8e9ee;
-  --secondary: #d1d1d1;
-  --tertiary: #587d71;
-  --med-green: #587d71;
+  --primary: #f7f5e6;
+  --secondary: #e8e8e8;
+  --med-green: #62825e;
+  --dark-green: #52658f;
+  --dark-blue: #333a56;
+  /* --dark-blue: #07214b; */
   --dark: #0f0606;
   --border-radius: 0.5rem;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -26,18 +27,48 @@ html {
 }
 .card {
   border-radius: var(--border-radius);
+  padding-bottom: 5%;
 }
 .card-action a {
   color: var(--dark) !important;
 }
 
 .card-panel {
-  background-color: rgb(253 255 254 / 90%);
   border-radius: var(--border-radius);
-  padding: 0.5rem;
+  padding: 0.1rem;
 }
 .card .card-title {
   border-bottom: var(--med-green) 5px solid;
+  color: var(--secondary);
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+}
+.card-title h2 {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.card .new-blog {
+  /* border-bottom: var(--dark-blue) 5px solid;
+  color: var(--dark-blue);
+  background-color: var(--secondary); */
+  font-weight: 900;
+  padding-top: 0.1rem;
+}
+/* .card-title.new-blog > span {
+  color: var(--dark-green) !important;
+} */
+.card.add-comment {
+  padding: 0.1rem;
+}
+
+.dashboard {
+  font-weight: 800;
+  color: var(--dark-blue);
+  font-size: 2rem;
+}
+.edit-post {
+  margin-top: 0;
+  padding-left: 1.2rem;
 }
 a {
   text-decoration: none;
@@ -46,19 +77,9 @@ a {
   transition: color 0.1s;
 }
 
-a:hover {
+a:hover,
+button:hover {
   color: var(--med-green) !important;
-}
-
-button {
-  background-color: #225ca3;
-  border: 0;
-  padding: 1%;
-  color: white;
-  font-weight: bold;
-  transition: background-color 0.1s;
-  cursor: pointer;
-  border-radius: 5px;
 }
 
 .user {
@@ -66,11 +87,10 @@ button {
 }
 
 .med-green {
-  background-color: var(--med-green) !important;
+  background-color: var(--dark-green) !important;
 }
-
-button:hover {
-  background-color: var(--med-green);
+.dark-blue {
+  background-color: var(--dark-blue) !important;
 }
 
 .post-list {
@@ -104,33 +124,8 @@ form label {
   display: block;
 }
 
-.wrapper {
-  width: 100%;
-  min-height: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.links {
-  display: flex;
-  justify-content: space-between;
-}
-/* header {
-  border-bottom: 1px solid rgb(155, 154, 154);
-  display: inline-block;
-  padding: 2% 1%;
-} */
-
-header h1 {
-  font-size: 1em;
-}
 nav {
-  /* display: flex;
-  justify-content: space-around; */
-  min-height: 85px;
+  min-height: 90px;
 }
 
 main {
@@ -147,36 +142,25 @@ main {
   font-size: 100%;
   font-weight: bold;
   transition: color 0.1s;
-  /* margin: 0.5rem; */
+  margin: 0.5rem;
+  color: var(--primary);
 }
 
-/* .btn-no-style:hover {
-  background: none;
-  color: ;
-} */
-
-.delete-post-btn {
-  background-color: #c01515;
-}
-
-.delete-post-btn:hover {
-  background-color: #e2461f;
+.btn-no-style:hover {
+  color: var(--med-green);
 }
 
 .post {
   margin-bottom: 2%;
   line-height: 150%;
 }
-#nav-mobile {
-  font-size: 2rem;
-  font-weight: 700;
+#blog-logo {
   background-color: var(--primary);
-  color: #01579b;
-  padding: 0 10px;
-  /* display: inline-block; */
+  padding: 0 0.5rem;
   border-radius: var(--border-radius);
-  box-shadow: 6px 5px var(--med-green);
-  margin: 0.5rem;
+  box-shadow: 5px 6px var(--med-green);
+  margin: 0.6rem;
+  color: var(--dark-green);
 }
 
 .post .title span {
@@ -185,48 +169,19 @@ main {
   color: var(--dark);
 }
 
-.card span {
+.card .card-title span {
   color: var(--primary);
   font-weight: 500;
   padding-left: 1rem;
-}
-
-.edit-link {
-  display: block;
-  margin: -1.5% 0 2% 0;
 }
 
 .comment-form {
   margin-bottom: 5%;
 }
 
-.comment {
-  padding: 1%;
-  margin-bottom: 1%;
+.comments {
+  margin: 1% 6%;
 }
-
-.comment:nth-child(odd) {
-  background-color: #fff5eb;
-}
-
-.comment .meta {
-  font-size: 90%;
-  margin-bottom: 0.5%;
-  opacity: 0.6;
-}
-
-.new-post-form input {
-  width: 300px;
-}
-
-.edit-post-form {
-  margin-bottom: 5%;
-}
-
-footer {
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  padding: 1%;
-  font-size: 110%;
+.comments p {
+  padding-left: 3%;
 }

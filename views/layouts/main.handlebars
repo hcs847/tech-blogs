@@ -13,12 +13,15 @@
 
 <body>
 
-    <nav class='light-blue darken-4'>
-        <div class=' nav-wrapper light-blue darken-4'>
-            <a id='nav-mobile' class='brand-logo' href='/'>The Tech Blogs</a>
+    <nav class='dark-blue'>
+        <div class='nav-wrapper'>
+            <a href="/" id='blog-logo' class="brand-logo">The Tech Blogs</a>
+
             <ul class='right'>
                 {{!-- loggedIn variable is passed up to main from the single-post template --}}
+                <li><a href='/'>Home</a></li>
                 {{#if loggedIn}}
+                <li><a href='/dashboard'>Dashboard</a></li>
                 <li><button id='logout' class='btn-no-style'>Logout</button></li>
                 {{else}}
                 <li><a href='/login'>Login</a></li>

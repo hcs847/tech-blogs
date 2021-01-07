@@ -8,9 +8,9 @@ const postdata = [
     user_id: 1,
   },
   {
-    title: "Asynchronous vs Synchronous programming",
+    title: "Promises for Asynchronous coding",
     content:
-      "Vivamus placerat elementum odio, nec fermentum felis cursus id. Cras at leo pellentesque nisi congue ultricies eget sit amet lorem.",
+      "Promises are templates that support asynchronous programming. E.g: a Fetch API request is pending until a promise is returned.",
     user_id: 2,
   },
   {
@@ -20,9 +20,9 @@ const postdata = [
     user_id: 3,
   },
   {
-    title: "Express js in details",
+    title: "The gist of TDD with Jest Framework",
     content:
-      "Aenean ut velit in urna dictum ultricies sit amet in lorem. Sed posuere orci sit amet odio facilisis, sit amet pulvinar leo laoreet.",
+      "Learn the basics of Test Driven Development to ensure your code works as expected. Implementing these principles will eliminate many unpleasant surprises of unexpected bugs.",
     user_id: 4,
   },
 ];

@@ -1,13 +1,11 @@
-<div class='card'>
-    <div class="card-title light-blue darken-4">
-        <span>{{title}}</span>
-    </div>
-    <div class='card-content'>
-        <p>{{content}}</p>
-    </div>
-    <div class='card-action light-blue-text text-darken-4'>
-        {{!-- comments made - routing to the related single post --}}
+<div class="card-title dark-blue">
+    <span>{{title}}</span>
+</div>
+<div class='card-content'>
+    <p>{{content}}</p>
+</div>
+<div class='card-action light-blue-text text-darken-4'>
+    {{!-- comments made - routing to the related single post --}}
 
-        <a href='/post/{{id}}'>{{comments.length}} {{format_plural 'comment' comments.length}}</a>
-    </div>
+    <a href='/post/{{id}}'>{{comments.length}} {{format_plural 'comment' comments.length}}</a>
 </div>

@@ -70,7 +70,7 @@ router.post("/", (req, res) => {
     title: req.body.title,
     content: req.body.content,
     // user id is retrieved from session
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
     .then((dbPostData) => {
       res.json(dbPostData);
@@ -83,11 +83,17 @@ router.post("/", (req, res) => {
 
 // update content and title of a post
 router.put("/:id", (req, res) => {
-  Post.update(req.body, {
-    where: {
-      id: req.params.id,
+  Post.update(
+    {
+      title: req.body.title,
+      content: req.body.content,
     },
-  })
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
     .then((dbPostData) => {
       if (!dbPostData) {
         res.status(404).json({ message: "No post found with this id" });
@@ -108,13 +114,18 @@ router.delete("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-  }).then((dbPostData) => {
-    if (!dbPostData) {
-      res.status(404).json({ message: "No post found with this is" });
-      return;
-    }
-    res.json(dbPostData);
-  });
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No post found with this is" });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

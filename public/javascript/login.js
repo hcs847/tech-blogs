@@ -37,8 +37,8 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      // redirecting to home page and disabling the back option
-      document.location.replace("/");
+      // redirecting to home page and disabling the back option once logged In
+      document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
