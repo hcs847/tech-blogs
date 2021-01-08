@@ -42,13 +42,16 @@ router.get("/login", (req, res) => {
   // redirecting to homepage once successfully loggedin
   if (req.session.loggedIn) {
     res.redirect("/");
-
     return;
   }
   // login form doesn't require any variables from posts
   res.render("login");
 });
 
+// signup route
+router.get("/signup", (req, res) => {
+  res.render("signup");
+});
 // rendering a single post
 router.get("/post/:id", (req, res) => {
   Post.findOne({

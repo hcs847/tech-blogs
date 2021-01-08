@@ -1,11 +1,9 @@
 :root {
   --primary: #f7f5e6;
-  --secondary: #e8e8e8;
-  --med-green: #62825e;
-  --dark-green: #52658f;
+  --secondary: #f8f6f6;
+  --med-blue: #52658f;
   --dark-blue: #333a56;
-  /* --dark-blue: #07214b; */
-  --dark: #0f0606;
+  --dark: #161a27;
   --border-radius: 0.5rem;
 }
 * {
@@ -17,7 +15,6 @@ html {
   background-color: var(--primary);
   margin: 0;
   padding: 0;
-  font-family: "IBM Plex Sans", sans-serif;
   color: var(--dark);
   line-height: 1.5;
   font-size: 16px;
@@ -27,7 +24,13 @@ html {
 }
 .card {
   border-radius: var(--border-radius);
-  padding-bottom: 5%;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+.card-action,
+.card-content,
+.card-title {
+  padding: 0.5rem 1rem !important;
 }
 .card-action a {
   color: var(--dark) !important;
@@ -38,33 +41,61 @@ html {
   padding: 0.1rem;
 }
 .card .card-title {
-  border-bottom: var(--med-green) 5px solid;
-  color: var(--secondary);
+  border-bottom: var(--dark-blue) 5px solid;
+  color: var(--primary);
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
 }
-.card-title h2 {
+/* .card-title h2 {
   font-size: 2rem;
   padding: 0.5rem;
+} */
+
+.post .title span {
+  font-style: italic;
+  font-size: 90%;
+  color: var(--dark);
+}
+
+.card .title {
+  color: var(--primary);
+  font-weight: 500;
+  /* padding-left: 0.5rem; */
+  font-size: 1.3rem;
+}
+.card .user {
+  color: var(--secondary);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2.1;
+  /* padding-right: 0.5rem; */
+}
+
+p .user {
+  color: var(--dark) !important;
 }
 .card .new-blog {
   /* border-bottom: var(--dark-blue) 5px solid;
   color: var(--dark-blue);
   background-color: var(--secondary); */
-  font-weight: 900;
-  padding-top: 0.1rem;
+  font-weight: 500;
+  line-height: 1;
+  /* padding-top: 0.1rem; */
 }
 /* .card-title.new-blog > span {
-  color: var(--dark-green) !important;
+  color: var(--med-blue) !important;
 } */
 .card.add-comment {
   padding: 0.1rem;
 }
 
 .dashboard {
-  font-weight: 800;
+  font-weight: 700;
   color: var(--dark-blue);
-  font-size: 2rem;
+  font-size: 2.2rem;
+  padding: 1rem 0;
 }
 .edit-post {
   margin-top: 0;
@@ -72,22 +103,26 @@ html {
 }
 a {
   text-decoration: none;
-  color: var(--tertiary);
+  color: var(--primary);
   font-weight: bold;
   transition: color 0.1s;
 }
 
 a:hover,
 button:hover {
-  color: var(--med-green) !important;
+  color: #ff8126 !important;
+}
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .user {
   font-weight: 800;
 }
 
-.med-green {
-  background-color: var(--dark-green) !important;
+.med-blue {
+  background-color: var(--med-blue) !important;
 }
 .dark-blue {
   background-color: var(--dark-blue) !important;
@@ -108,7 +143,7 @@ input {
 textarea:focus,
 input:focus {
   outline: none;
-  border: 1px solid var(--med-green);
+  border: 1px solid var(--med-blue);
 }
 
 textarea {
@@ -125,7 +160,11 @@ form label {
 }
 
 nav {
-  min-height: 90px;
+  /* min-height: 70px; */
+  line-height: 1.2;
+}
+nav ul a {
+  line-height: 4;
 }
 
 main {
@@ -136,18 +175,18 @@ main {
 .btn-no-style {
   background: none;
   border: none;
-  padding: 0.5rem;
+  padding-right: 1rem;
   cursor: pointer;
   text-decoration: none;
   font-size: 100%;
   font-weight: bold;
   transition: color 0.1s;
-  margin: 0.5rem;
-  color: var(--primary);
+  color: #fff;
+  line-height: 4;
 }
 
 .btn-no-style:hover {
-  color: var(--med-green);
+  color: #ff8126;
 }
 
 .post {
@@ -158,25 +197,9 @@ main {
   background-color: var(--primary);
   padding: 0 0.5rem;
   border-radius: var(--border-radius);
-  box-shadow: 5px 6px var(--med-green);
+  box-shadow: 5px 6px var(--dark-blue);
   margin: 0.6rem;
-  color: var(--dark-green);
-}
-
-.post .title span {
-  font-style: italic;
-  font-size: 90%;
-  color: var(--dark);
-}
-
-.card .card-title span {
-  color: var(--primary);
-  font-weight: 500;
-  padding-left: 1rem;
-}
-
-.comment-form {
-  margin-bottom: 5%;
+  color: var(--dark-blue);
 }
 
 .comments {
@@ -184,4 +207,12 @@ main {
 }
 .comments p {
   padding-left: 3%;
+}
+
+.form-text {
+  color: var(--dark-blue);
+  font-weight: 600;
+}
+textarea {
+  margin: 0.5rem 0 !important;
 }

@@ -13,23 +13,30 @@
 
 <body>
 
-    <nav class='dark-blue'>
-        <div class='nav-wrapper'>
-            <a href="/" id='blog-logo' class="brand-logo">The Tech Blogs</a>
-
-            <ul class='right'>
-                {{!-- loggedIn variable is passed up to main from the single-post template --}}
-                <li><a href='/'>Home</a></li>
-                {{#if loggedIn}}
-                <li><a href='/dashboard'>Dashboard</a></li>
-                <li><button id='logout' class='btn-no-style'>Logout</button></li>
+    <div class='navbar-fixed'>
+        <nav class='med-blue'>
+            <div class='nav-wrapper'>
+                {{!-- changing main header based on selected tab --}}
+                {{#if dashBoard}}
+                <a href="/" id='blog-logo' class="brand-logo">Your Dashboard</a>
                 {{else}}
-                <li><a href='/login'>Login</a></li>
+                <a href="/" id='blog-logo' class="brand-logo">The Tech Blogs</a>
                 {{/if}}
-            </ul>
 
-        </div>
-    </nav>
+                <ul class='right'>
+                    {{!-- loggedIn variable is passed up to main from the single-post template --}}
+                    <li><a href='/'>Home</a></li>
+                    {{#if loggedIn}}
+                    <li><a href='/dashboard'>Dashboard</a></li>
+                    <li><button id='logout' class='btn-no-style'>Logout</button></li>
+                    {{else}}
+                    <li><a href='/login'>Login / signup</a></li>
+                    {{/if}}
+                </ul>
+
+            </div>
+        </nav>
+    </div>
     <main class='container'>
         {{{ body }}}
     </main>

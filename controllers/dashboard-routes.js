@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
+const withAuth = require("../utils/auth");
 
-// get user's posts and new post form
-router.get("/", (req, res) => {
+// get user's own posts and new post form
+router.get("/", withAuth, (req, res) => {
   Post.findAll({
     // find user's posts based on session user_id
     where: {
@@ -26,8 +27,8 @@ router.get("/", (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      // passing loggedIn property as true since the user reached the dashboard
-      res.render("dashboard", { posts, loggedIn: true });
+      // passing loggedIn and dashboard properties to templates for conditional rendering
+      res.render("dashboard", { posts, loggedIn: true, dashBoard: true });
     })
     .catch((err) => {
       console.log(err);
@@ -36,7 +37,7 @@ router.get("/", (req, res) => {
 });
 
 // edit own post route
-router.get("/edit/:id", (req, res) => {
+router.get("/edit/:id", withAuth, (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
@@ -62,7 +63,7 @@ router.get("/edit/:id", (req, res) => {
         res.status(404).json({ message: "No blog post was found for this id." });
       }
       const post = dbPostData.get({ plain: true });
-      res.render("edit-post", { post, loggedIn: true });
+      res.render("edit-post", { post, loggedIn: true, dashBoard: true });
     })
     .catch((err) => {
       console.log(err);
