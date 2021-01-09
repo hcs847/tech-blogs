@@ -1,10 +1,11 @@
 <div class="card-title med-blue">
-    <span class='title'>{{title}}</span><span class='user'> posted by {{user.username}} </span>
+    <span class='title'>{{title}}</span> <span class='user'>
+        by {{user.username}} </span>
 </div>
 <div class='card-content'>
     <p>{{content}}</p>
 </div>
-<div class='card-action light-blue-text text-darken-4'>
+<div class='card-action'>
     {{!-- comments made - routing to the related single post --}}
 
     <a href='/post/{{id}}'>{{comments.length}} {{format_plural 'comment' comments.length}}</a>

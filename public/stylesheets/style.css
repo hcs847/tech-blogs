@@ -48,21 +48,11 @@ html {
   display: flex;
   justify-content: space-between;
 }
-/* .card-title h2 {
-  font-size: 2rem;
-  padding: 0.5rem;
-} */
-
-.post .title span {
-  font-style: italic;
-  font-size: 90%;
-  color: var(--dark);
-}
 
 .card .title {
   color: var(--primary);
   font-weight: 500;
-  /* padding-left: 0.5rem; */
+
   font-size: 1.3rem;
 }
 .card .user {
@@ -70,23 +60,17 @@ html {
   font-weight: 400;
   font-size: 1rem;
   line-height: 2.1;
-  /* padding-right: 0.5rem; */
 }
 
-p .user {
+p .user,
+p a {
   color: var(--dark) !important;
 }
 .card .new-blog {
-  /* border-bottom: var(--dark-blue) 5px solid;
-  color: var(--dark-blue);
-  background-color: var(--secondary); */
   font-weight: 500;
   line-height: 1;
-  /* padding-top: 0.1rem; */
 }
-/* .card-title.new-blog > span {
-  color: var(--med-blue) !important;
-} */
+
 .card.add-comment {
   padding: 0.1rem;
 }
@@ -109,8 +93,12 @@ a {
 }
 
 a:hover,
-button:hover {
+button:hover,
+.btn:focus,
+button:focus,
+.btn-no-style:hover {
   color: #ff8126 !important;
+  background-color: transparent !important;
 }
 .buttons {
   display: flex;
@@ -160,7 +148,6 @@ form label {
 }
 
 nav {
-  /* min-height: 70px; */
   line-height: 1.2;
 }
 nav ul a {
@@ -183,10 +170,6 @@ main {
   transition: color 0.1s;
   color: #fff;
   line-height: 4;
-}
-
-.btn-no-style:hover {
-  color: #ff8126;
 }
 
 .post {
@@ -215,4 +198,43 @@ main {
 }
 textarea {
   margin: 0.5rem 0 !important;
+}
+
+@media screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .brand-logo {
+    left: 18%;
+  }
+  nav ul a,
+  .btn-no-style {
+    font-size: 0.9rem;
+  }
+
+  .card .title {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  nav .brand-logo {
+    left: 20%;
+    font-size: 1.6rem;
+  }
+  body {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 450px) {
+    nav .brand-logo {
+      left: 22%;
+      font-size: 1.4rem;
+    }
+    nav ul a,
+    .btn-no-style {
+      font-size: 0.7rem;
+    }
+  }
 }
