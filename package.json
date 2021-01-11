@@ -1,0 +1,47 @@
+{
+  "name": "tech-blogs",
+  "version": "1.0.0",
+  "description": "A blog site that enables developers to publish their blog posts and to comment on other developer's posts. Built with javascript, handlebars.js, sequelize, express-session, node.js and express.js.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hcs847/tech-blogs.git"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "express.js",
+    "sequelize",
+    "express-session",
+    "handlebars.js",
+    "MVC",
+    "ORM",
+    "CMS",
+    "bcrypt"
+  ],
+  "author": "Hila Caspi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hcs847/tech-blogs/issues"
+  },
+  "homepage": "https://github.com/hcs847/tech-blogs#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

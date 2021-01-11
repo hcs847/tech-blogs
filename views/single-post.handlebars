@@ -1,0 +1,32 @@
+<div class='container'>
+    <div class='card'>
+        {{!-- passing the post-info partial template --}}
+        {{> post-info post}}
+
+        {{!-- rendering the comments partial --}}
+        {{> comments post.comments}}
+    </div>
+    {{#if loggedIn}}
+    <div class='card add-comment'>
+        {{!-- loggedIn variable was passed to the post route in home-routes --}}
+
+        <form class='comment-form card-content'>
+            <span class='form-text'>Add your comments</span>
+            <div>
+                <textarea name='comment-body' class='materialize-textarea white'></textarea>
+            </div>
+
+            <div class='buttons'>
+                <button type='submit' class='btn med-blue'>Submit<i class="material-icons right">send</i></button>
+            </div>
+        </form>
+    </div>
+    {{/if}}
+
+
+
+
+</div>
+{{#if loggedIn}}
+<script src='/javascript/comment.js'></script>
+{{/if}}

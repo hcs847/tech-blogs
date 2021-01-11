@@ -1,0 +1,240 @@
+:root {
+  --primary: #f7f5e6;
+  --secondary: #f8f6f6;
+  --med-blue: #52658f;
+  --dark-blue: #333a56;
+  --dark: #161a27;
+  --border-radius: 0.5rem;
+}
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: var(--primary);
+  margin: 0;
+  padding: 0;
+  color: var(--dark);
+  line-height: 1.5;
+  font-size: 16px;
+}
+.btn {
+  border-radius: var(--border-radius);
+}
+.card {
+  border-radius: var(--border-radius);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+.card-action,
+.card-content,
+.card-title {
+  padding: 0.5rem 1rem !important;
+}
+.card-action a {
+  color: var(--dark) !important;
+}
+
+.card-panel {
+  border-radius: var(--border-radius);
+  padding: 0.1rem;
+}
+.card .card-title {
+  border-bottom: var(--dark-blue) 5px solid;
+  color: var(--primary);
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .title {
+  color: var(--primary);
+  font-weight: 500;
+
+  font-size: 1.3rem;
+}
+.card .user {
+  color: var(--secondary);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2.1;
+}
+
+p .user,
+p a {
+  color: var(--dark) !important;
+}
+.card .new-blog {
+  font-weight: 500;
+  line-height: 1;
+}
+
+.card.add-comment {
+  padding: 0.1rem;
+}
+
+.dashboard {
+  font-weight: 700;
+  color: var(--dark-blue);
+  font-size: 2.2rem;
+  padding: 1rem 0;
+}
+.edit-post {
+  margin-top: 0;
+  padding-left: 1.2rem;
+}
+a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+a:hover,
+button:hover,
+.btn:focus,
+button:focus,
+.btn-no-style:hover {
+  color: #ff8126 !important;
+  background-color: transparent !important;
+}
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user {
+  font-weight: 800;
+}
+
+.med-blue {
+  background-color: var(--med-blue) !important;
+}
+.dark-blue {
+  background-color: var(--dark-blue) !important;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+}
+
+textarea,
+input {
+  padding: 0.5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border: 1px solid var(--med-blue);
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+}
+
+nav {
+  line-height: 1.2;
+}
+nav ul a {
+  line-height: 4;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding-right: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color 0.1s;
+  color: #fff;
+  line-height: 4;
+}
+
+.post {
+  margin-bottom: 2%;
+  line-height: 150%;
+}
+#blog-logo {
+  background-color: var(--primary);
+  padding: 0 0.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 5px 6px var(--dark-blue);
+  margin: 0.6rem;
+  color: var(--dark-blue);
+}
+
+.comments {
+  margin: 1% 6%;
+}
+.comments p {
+  padding-left: 3%;
+}
+
+.form-text {
+  color: var(--dark-blue);
+  font-weight: 600;
+}
+textarea {
+  margin: 0.5rem 0 !important;
+}
+
+@media screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .brand-logo {
+    left: 18%;
+  }
+  nav ul a,
+  .btn-no-style {
+    font-size: 0.9rem;
+  }
+
+  .card .title {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  nav .brand-logo {
+    left: 20%;
+    font-size: 1.6rem;
+  }
+  body {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 450px) {
+    nav .brand-logo {
+      left: 22%;
+      font-size: 1.4rem;
+    }
+    nav ul a,
+    .btn-no-style {
+      font-size: 0.7rem;
+    }
+  }
+}
