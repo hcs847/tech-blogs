@@ -1,6 +1,6 @@
 :root {
-  --primary: #f7f5e6;
-  --secondary: #f8f6f6;
+  --primary: rgb(225,233,247);
+  --secondary: rgb(246,247,252);
   --med-blue: #52658f;
   --dark-blue: #333a56;
   --dark: #161a27;
@@ -13,6 +13,9 @@
 body,
 html {
   background-color: var(--primary);
+  background-image: url('tech-bckgrd.jpg');
+  background-size: cover;
+  background-position: center;
   margin: 0;
   padding: 0;
   color: var(--dark);
@@ -27,6 +30,11 @@ html {
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
 }
+
+.container {
+  max-width: 75vw;
+}
+
 .card-action,
 .card-content,
 .card-title {
@@ -88,7 +96,7 @@ p a {
 a {
   text-decoration: none;
   color: var(--primary);
-  font-weight: bold;
+
   transition: color 0.1s;
 }
 
